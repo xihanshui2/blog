@@ -8,6 +8,7 @@ use wkhtmltox\Image\Converter as ImageConverter;
 class PictureController extends Controller
 {
     //
+    public $path = __DIR__ . '/public/';
     public function index()
     {
         $str = <<<EOD
@@ -341,8 +342,8 @@ EOD;
 
 
 $converter = new ImageConverter($str, [
-	"fmt" => "png",
-	"out" => "./test.png"
+	"fmt" => "jpg",
+	"out" => $this->path . "test.jpg"
 ]);
 
 $converter->convert();
